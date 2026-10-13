@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="EduPetro — каталог колледжей и техникумов Петропавловска. Изучай специальности, сравнивай учебные заведения и читай отзывы."
+    >
+
+    <meta name="theme-color" content="#f8f9fc">
+
+    <title>EduPetro — найди своё будущее</title>
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Иконки -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Стили сайта -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Логика сайта -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================
+         ШАПКА САЙТА
+    ========================== -->
+
+    <header class="header">
+        <div class="container header-inner">
+
+            <a href="#" class="logo" aria-label="EduPetro — главная">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </span>
+
+                <span class="logo-text">
+                    Edu<span>Petro</span>
+                </span>
+            </a>
+
+            <nav class="navigation" id="navigation">
+                <a href="#catalog">Колледжи</a>
+                <a href="#directions">Направления</a>
+                <a href="#about">О проекте</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button
+                    class="header-favorites"
+                    id="show-favorites"
+                    type="button"
+                    aria-label="Показать избранное"
+                >
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Избранное</span>
+                    <span class="favorites-count" id="favorites-count">0</span>
+                </button>
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobile-menu-button"
+                    type="button"
+                    aria-label="Открыть меню"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             ГЛАВНЫЙ ЭКРАН
+        ========================== -->
+
+        <section class="hero">
+            <div class="container hero-inner">
+
+                <div class="hero-content">
+
+                    <div class="hero-label">
+                        <span class="status-dot"></span>
+                        Твой гид по образованию
+                    </div>
+
+                    <h1>
+                        Найди своё
+                        <span class="gradient-text">будущее</span>
+                        в Петропавловске
+                    </h1>
+
+                    <p class="hero-description">
+                        Сравни колледжи и техникумы, изучай профессии
+                        и узнавай, что на самом деле думают студенты.
+                    </p>
+
+                    <!-- Поисковая строка -->
+                    <form class="search-box" id="search-form">
+
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+                        <input
+                            type="search"
+                            id="search-input"
+                            placeholder="Например, программирование..."
+                            aria-label="Поиск колледжей и специальностей"
+                        >
+
+                        <button type="submit" class="button button-primary">
+                            Найти
+                        </button>
+
+                    </form>
+
+                    <div class="popular-searches">
+                        <span>Популярное:</span>
+
+                        <button type="button" class="search-tag" data-search="IT">
+                            IT
+                        </button>
+
+                        <button type="button" class="search-tag" data-search="медицина">
+                            Медицина
+                        </button>
+
+                        <button type="button" class="search-tag" data-search="строительство">
+                            Строительство
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Декоративная иллюстрация -->
+                <div class="hero-visual">
+
+                    <div class="hero-image"></div>
+
+                    <div class="floating-card floating-card-top">
+                        <div class="floating-icon purple">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+
+                        <div>
+                            <strong>Твой путь</strong>
+                            <span>Начинается здесь</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-bottom">
+                        <div class="floating-icon green">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div>
+                            <strong>Выбирай осознанно</strong>
+                            <span>Изучай разные возможности</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-decoration decoration-one"></div>
+                    <div class="hero-decoration decoration-two"></div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             ИНФОРМАЦИОННАЯ ПОЛОСА
+        ========================== -->
+
+        <section class="stats-section">
+            <div class="container stats-grid">
+
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div>
+                        <strong>Каталог</strong>
+                        <span>Учебные заведения</span>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+
+                    <div>
+                        <strong>Специальности</strong>
+                        <span>Выбирай профессию</span>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div>
+                        <strong>Мнения студентов</strong>
+                        <span>Смотри на разные стороны</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             НАПРАВЛЕНИЯ ОБУЧЕНИЯ
+        ========================== -->
+
+        <section class="directions section" id="directions">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="eyebrow">НАЙДИ СВОЁ</span>
+                        <h2>Что тебе интересно?</h2>
+
+                        <p>
+                            Выбери направление, чтобы найти подходящие
+                            специальности и учебные заведения.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="directions-grid">
+
+                    <button
+                        class="direction-card"
+                        type="button"
+                        data-category="it"
+                    >
+                        <span class="direction-icon icon-purple">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </span>
+
+                        <strong>IT и технологии</strong>
+                        <span>Программирование, сети, компьютеры</span>
+
+                        <i class="fa-solid fa-arrow-right direction-arrow"></i>
+                    </button>
+
+
+                    <button
+                        class="direction-card"
+                        type="button"
+                        data-category="medicine"
+                    >
+                        <span class="direction-icon icon-red">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </span>
+
+                        <strong>Медицина</strong>
+                        <span>Здоровье, помощь людям, фармация</span>
+
+                        <i class="fa-solid fa-arrow-right direction-arrow"></i>
+                    </button>
+
+
+                    <button
+                        class="direction-card"
+                        type="button"
+                        data-category="engineering"
+                    >
+                        <span class="direction-icon icon-orange">
+                            <i class="fa-solid fa-gears"></i>
+                        </span>
+
+                        <strong>Техника и инженерия</strong>
+                        <span>Механика, транспорт, оборудование</span>
+
+                        <i class="fa-solid fa-arrow-right direction-arrow"></i>
+                    </button>
+
+
+                    <button
+                        class="direction-card"
+                        type="button"
+                        data-category="construction"
+                    >
+                        <span class="direction-icon icon-blue">
+                            <i class="fa-solid fa-building"></i>
+                        </span>
+
+                        <strong>Строительство</strong>
+                        <span>Архитектура, здания, проектирование</span>
+
+                        <i class="fa-solid fa-arrow-right direction-arrow"></i>
+                    </button>
+
+
+                    <button
+                        class="direction-card"
+                        type="button"
+                        data-category="business"
+                    >
+                        <span class="direction-icon icon-green">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </span>
+
+                        <strong>Бизнес и экономика</strong>
+                        <span>Финансы, учёт, управление</span>
+
+                        <i class="fa-solid fa-arrow-right direction-arrow"></i>
+                    </button>
+
+
+                    <button
+                        class="direction-card"
+                        type="button"
+                        data-category="service"
+                    >
+                        <span class="direction-icon icon-pink">
+                            <i class="fa-solid fa-utensils"></i>
+                        </span>
+
+                        <strong>Сфера услуг</strong>
+                        <span>Кулинария, сервис, индустрия красоты</span>
+
+                        <i class="fa-solid fa-arrow-right direction-arrow"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             КАТАЛОГ КОЛЛЕДЖЕЙ
+        ========================== -->
+
+        <section class="catalog section" id="catalog">
+
+            <div class="container">
+
+                <div class="section-heading catalog-heading">
+
+                    <div>
+                        <span class="eyebrow">ИССЛЕДУЙ ВОЗМОЖНОСТИ</span>
+                        <h2>Учебные заведения</h2>
+
+                        <p>
+                            Сравнивай программы обучения и выбирай то,
+                            что подходит именно тебе.
+                        </p>
+                    </div>
+
+                    <div class="catalog-counter">
+                        <span id="results-count">0</span>
+                        <span>в каталоге</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Фильтры -->
+                <div class="catalog-toolbar">
+
+                    <div class="filter-buttons">
+
+                        <button
+                            class="filter-button active"
+                            type="button"
+                            data-filter="all"
+                        >
+                            Все
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-filter="it"
+                        >
+                            IT
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-filter="medicine"
+                        >
+                            Медицина
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-filter="engineering"
+                        >
+                            Техника
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-filter="construction"
+                        >
+                            Строительство
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-filter="business"
+                        >
+                            Экономика
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            type="button"
+                            data-filter="service"
+                        >
+                            Сфера услуг
+                        </button>
+
+                    </div>
+
+                    <label class="sort-wrapper">
+                        <span class="visually-hidden">Сортировка</span>
+
+                        <select id="sort-select">
+                            <option value="default">По умолчанию</option>
+                            <option value="name">По названию</option>
+                        </select>
+                    </label>
+
+                </div>
+
+
+                <!-- Сюда JavaScript добавит карточки -->
+                <div class="college-grid" id="college-grid"></div>
+
+
+                <!-- Сообщение, если ничего не найдено -->
+                <div class="empty-state hidden" id="empty-state">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <h3>Ничего не найдено</h3>
+
+                    <p>
+                        Попробуй изменить запрос или выбрать другое направление.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="reset-filters"
+                    >
+                        Сбросить фильтры
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ПОДСКАЗКА АБИТУРИЕНТАМ
+        ========================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <div class="cta-content">
+
+                        <span class="eyebrow cta-eyebrow">
+                            ТВОЁ БУДУЩЕЕ НАЧИНАЕТСЯ СЕГОДНЯ
+                        </span>
+
+                        <h2>
+                            Не выбирай наугад.
+                            <br>
+                            Изучай и сравнивай.
+                        </h2>
+
+                        <p>
+                            Узнай о разных профессиях, посмотри на
+                            учебные заведения с разных сторон и
+                            сделай собственный выбор.
+                        </p>
+
+                        <a href="#catalog" class="button button-light">
+                            Смотреть каталог
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="cta-decoration">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             О ПРОЕКТЕ
+        ========================== -->
+
+        <section class="about-section section" id="about">
+
+            <div class="container about-inner">
+
+                <div class="about-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <div class="about-content">
+
+                    <span class="eyebrow">НАША ИДЕЯ</span>
+
+                    <h2>Образование — это выбор, а не лотерея.</h2>
+
+                    <p>
+                        EduPetro создаётся для абитуриентов,
+                        которые хотят заранее узнать больше о колледжах
+                        и техникумах Петропавловска.
+                    </p>
+
+                    <p>
+                        Мы хотим объединить официальную информацию,
+                        описание профессий и опыт студентов, чтобы
+                        поступающим было проще принимать решения.
+                    </p>
+
+                    <div class="demo-notice">
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+                            Это демонстрационная версия. Часть сведений
+                            и отзывов показана в качестве примеров.
+                            Перед публикацией реального каталога
+                            необходимо проверить данные.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ПОДВАЛ
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <a href="#" class="logo footer-logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </span>
+
+                <span class="logo-text">
+                    Edu<span>Petro</span>
+                </span>
+            </a>
+
+            <p>
+                Помогаем найти свой путь в образовании.
+            </p>
+
+            <span class="copyright">
+                © <span id="current-year"></span> EduPetro
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         МОДАЛЬНОЕ ОКНО КОЛЛЕДЖА
+    ========================== -->
+
+    <div
+        class="modal-overlay hidden"
+        id="college-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+    >
+
+        <div class="modal-window">
+
+            <button
+                class="modal-close"
+                id="modal-close"
+                type="button"
+                aria-label="Закрыть окно"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Содержимое будет добавлено JavaScript -->
+            <div id="modal-content"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ПЛАШКА СРАВНЕНИЯ
+    ========================== -->
+
+    <div class="compare-bar hidden" id="compare-bar">
+
+        <div class="compare-info">
+            <i class="fa-solid fa-scale-balanced"></i>
+
+            <span>
+                Выбрано для сравнения:
+                <strong id="compare-count">0</strong>
+            </span>
+        </div>
+
+        <div class="compare-actions">
+
+            <button
+                class="button button-outline"
+                id="clear-compare"
+                type="button"
+            >
+                Очистить
+            </button>
+
+            <button
+                class="button button-primary"
+                id="compare-button"
+                type="button"
+            >
+                Сравнить
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         УВЕДОМЛЕНИЕ
+    ========================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+</body>
+</html>
